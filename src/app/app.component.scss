@@ -58,14 +58,8 @@
 .dealt-cards-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    /* Adjust the gap between cards as needed */
-}
-
-/* Container for each hand */
-.dealt-hand {
-    display: flex;
-    flex-direction: column;
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Adjust the gap between cards */
 }
 
 /* Player info */
@@ -80,6 +74,25 @@
     border: 1px solid #ced4da;
     border-radius: 5px;
     padding: 15px;
-    width: 150px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content horizontally */
+    margin-bottom: 20px; /* Add some space between cards */
+}
+
+/* Adjust the size of the card images */
+.dealt-card img {
+    width: 80px; /* Adjust the width of the card */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.dealt-hand {
+    display: flex; /* Use flexbox */
+    flex-direction: row; /* Arrange cards horizontally */
+    margin-bottom: 10px; /* Optional: Add margin between hands */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: center; /* Center the content horizontally */
+}
+
+.error-message {
+    color: red; // Set text color to red
 }
