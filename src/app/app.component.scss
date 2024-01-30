@@ -2,39 +2,50 @@
 
 /* Input container */
 .input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-
-    &>div {
-        margin-bottom: 10px;
-    }
-
-    label {
-        font-weight: bold;
-    }
-
-    input[type="number"] {
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-    }
-
-    button {
-        padding: 8px 16px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: #0056b3;
-        }
-    }
-}
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+  }
+  
+  .input-container > div {
+    margin-bottom: 10px;
+  }
+  
+  .input-container label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+  }
+  
+  .input-container input[type="number"] {
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .input-container .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .input-container button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-container button:hover {
+    background-color: #0056b3;
+  }
 
 /* Output cards */
 .card {
@@ -58,14 +69,14 @@
 .dealt-cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the cards horizontally */
-    gap: 20px; /* Adjust the gap between cards */
+    justify-content: center; 
+    gap: 20px; 
 }
 
 /* Player info */
 .player-info {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 /* Individual card container */
@@ -75,8 +86,8 @@
     border-radius: 5px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center the content horizontally */
-    margin-bottom: 20px; /* Add some space between cards */
+    text-align: center;
+    width: 100px;
 }
 
 /* Adjust the size of the card images */
@@ -88,11 +99,16 @@
 .dealt-hand {
     display: flex; /* Use flexbox */
     flex-direction: row; /* Arrange cards horizontally */
-    margin-bottom: 10px; /* Optional: Add margin between hands */
+    padding: 10px;
     flex-wrap: wrap; /* Allow cards to wrap to the next line */
     justify-content: center; /* Center the content horizontally */
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .error-message {
     color: red; // Set text color to red
+}
+.page-title{
+    text-align: center;
 }

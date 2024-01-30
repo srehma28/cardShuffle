@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-
 interface Card {
   value: string;
   suit: string;
@@ -20,7 +19,7 @@ export class AppComponent {
 
   @ViewChild('numPlayersInput') numPlayersInput!: ElementRef;
   @ViewChild('cardsPerPlayerInput') cardsPerPlayerInput!: ElementRef;
-  
+
   errorMessage: string = ""; // Initialize error message
   hands: Card[][] = [];
   suits = ['clubs', 'diamonds', 'hearts', 'spades'];
@@ -54,17 +53,17 @@ export class AppComponent {
   shuffleCards() {
     const numPlayers = parseInt(this.numPlayersInput.nativeElement.value);
     const cardsPerPlayer = parseInt(this.cardsPerPlayerInput.nativeElement.value);
-  
+
     // Check if the total number of cards exceeds 52
     const totalCards = numPlayers * cardsPerPlayer;
     if (isNaN(numPlayers) || isNaN(cardsPerPlayer) || totalCards > 52 || numPlayers < 1 || cardsPerPlayer < 1) {
       this.errorMessage = "Please enter valid numbers and ensure the total number of cards does not exceed 52.";
       return;
     }
-  
+
     // Clear previous error message if any
     this.errorMessage = '';
-  
+
     const deck = this.createDeck();
     const shuffledDeck = this.shuffleDeck([...deck]);
     const hands = this.dealCards(shuffledDeck, numPlayers, cardsPerPlayer);

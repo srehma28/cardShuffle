@@ -1,11 +1,15 @@
 <!-- app.component.html -->
+
+<div class="page-title">
+  <h1>Welcome to Saqib's card shuffler app</h1>
+</div>
 <div class="input-container">
   <div>
-    <label for="numPlayers">Number of Players:</label>
+    <label for="numPlayers">Number of Players: </label>
     <input type="number" id="numPlayers" min="1" value="1" #numPlayersInput>
   </div>
   <div>
-    <label for="cardsPerPlayer">Cards per Player:</label>
+    <label for="cardsPerPlayer">Cards per Player: </label>
     <input type="number" id="cardsPerPlayer" min="1" value="5" #cardsPerPlayerInput>
   </div>
   <div class="error-message">{{ errorMessage }}</div>
@@ -18,11 +22,13 @@
 <div class="dealt-cards-container">
   <div *ngFor="let hand of hands; let i = index">
     <div class="player-info">Player {{ i + 1 }}</div>
-  <div class="dealt-hand">
-    <div *ngFor="let card of hand" class="dealt-card">
-      <img [src]="card.imagePath" alt="{{ card.value }} of {{ card.suit }}">
+    <div class="dealt-hand">
+      <div *ngFor="let card of hand" class="dealt-card">
+        <img [src]="card.imagePath" alt="{{ card.value }} of {{ card.suit }}">
+        <div class="card-info">
+          <p>{{ card.value | titlecase }} of {{ card.suit | titlecase }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
-
