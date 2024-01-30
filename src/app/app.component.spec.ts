@@ -24,6 +24,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, cardShuffle');
+    expect(compiled.querySelector('.input-container')).toBeTruthy(); // Check if input container is rendered
+    expect(compiled.querySelector('.dealt-cards-container')).toBeTruthy(); // Check if dealt cards container is rendered
   });
 });
